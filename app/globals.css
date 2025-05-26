@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Sakitu Baelah Clean';
+  src: url('/fonts/SakituBaelahClean.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Medium.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto-Light';
+  src: url('/fonts/Roboto_Condensed-Light.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto-ExtraBold';
+  src: url('/fonts/Roboto_SemiCondensed-ExtraBold.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
