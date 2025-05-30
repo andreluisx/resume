@@ -21,6 +21,8 @@ export type Certificate = {
   description: string;
   issuer: string;
   date: string;
+  url?: string;
+  teacher?: string;
 };
 
 export const stacks: Stack[] = [
@@ -114,6 +116,21 @@ export const projects: Project[] = [
       "Sistema de Pontos com Base em Dificuldade",
     ],
   },
+  {
+    title: "GitHub Finder",
+    image: "/images/projects/githubfinder.png",
+    shortDescription: "Consumindo a API do github para encontrar usuários.",
+    fullDescription:
+      'Pesquisa rápida de username de usuário do github para retornar os dados como imagem, nome, descrição',
+    githubUrl: "https://github.com/andreluisx/github-finder",
+    technologies: ["React", "JavaScript", "Tailwind CSS"],
+    features: [
+      "Consumo de API externa",
+      "Leitura de dados da resposta",
+      "Loading implementado",
+      "Tratamento de Erros",
+    ],
+  },
 ];
 
 export const certificates: Certificate[] = [
@@ -121,9 +138,11 @@ export const certificates: Certificate[] = [
     title: "Curso de Nest.js",
     image: "/images/projects/perfectjob.png",
     description:
-      "Certificação em conceitos avançados de React incluindo hooks customizados, context API, renderização otimizada e padrões de composição.",
-    issuer: "Plataforma de Cursos Tech",
-    date: "Junho 2023",
+      "Curso de NestJS - crie seu backend API RESTful com TypeOrm, PostgreSQL, autenticação JWT, testes automatizados e padrões",
+    issuer: "Udemy",
+    date: "Maio 2025",
+    url:"https://www.udemy.com/course/nestjs-curso-completo-rest-api-typeorm-jwt-e-mais",
+    teacher:"Luíz Ótavio",
   },
   
 ];

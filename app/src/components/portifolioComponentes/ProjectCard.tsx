@@ -17,10 +17,9 @@ export const ProjectCard = ({
     initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
     animate={{ opacity: 1, x: 0 }}
     transition={{ duration: 0.5, delay: index * 0.15 }}
-    whileHover={{ y: -5 }}
     className={`bg-gray-800 rounded-xl overflow-hidden shadow-lg cursor-pointer border ${
       project.siteUrl ? "border-red-950" : "border-gray-700"
-    } hover:border-blue-400 transition-colors relative group`}
+    } hover:border-blue-400 transition-colors relative group duration-300`}
     onClick={onClick}
   >
     <div className="h-52 relative">

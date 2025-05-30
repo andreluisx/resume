@@ -55,20 +55,29 @@ export const CertificateModal = ({
         </div>
 
         <div className="mt-4 flex items-center space-x-4 text-gray-400">
-          <span>Emitido por: {certificate.issuer}</span>
+          <span>Plataforma: {certificate.issuer}</span>
           <span>•</span>
           <span>Concluído em: {certificate.date}</span>
+          <span>•</span>
+          <span>Professor: {certificate?.teacher || 'Não específicado'}</span>
         </div>
 
         <p className="mt-4 text-gray-300">{certificate.description}</p>
 
-        <div className="mt-8">
+        <div className="flex justify-start items-center gap-5 mt-8">
           <button
             onClick={onClose}
-            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg font-medium hover:opacity-90 transition-opacity"
+            className="inline-flex items-center px-6 py-3 bg-gradient-to-r bg-black rounded-lg font-medium hover:opacity-90 transition-opacity"
           >
             Fechar
           </button>
+          <a
+            target="_blank"
+            href={certificate?.url}
+            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg font-medium hover:opacity-90 transition-opacity"
+          >
+            Ver Curso
+          </a>
         </div>
       </div>
     </motion.div>

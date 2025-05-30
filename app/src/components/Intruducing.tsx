@@ -31,7 +31,6 @@ export default function HeroSection() {
   return (
     <div className="relative w-full min-h-screen bg-gray-900 overflow-hidden ">
       {/* Efeito de Partículas */}
-      <ParticleBackground />
 
       {/* Efeito de Nebulosa */}
       <div className="absolute inset-0">
@@ -148,7 +147,7 @@ export default function HeroSection() {
               className="text-gray-400 hover:text-white"
               aria-label="GitHub"
             >
-              <GitHub size={24} />
+              <GitHub />
             </motion.a>
             <motion.a
               whileHover={{ y: -5, scale: 1.1 }}
@@ -157,7 +156,7 @@ export default function HeroSection() {
               className="text-gray-400 hover:text-white"
               aria-label="LinkedIn"
             >
-              <LinkedIn size={24} />
+              <LinkedIn />
             </motion.a>
           </motion.div>
         </motion.div>

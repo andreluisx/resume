@@ -17,8 +17,7 @@ export const TechGlowCard = ({ name, image, proficiency, index }: { name: string
         type: 'spring',
         stiffness: 100
       }}
-      whileHover={{ y: -10, scale: 1.05 }}
-      className="flex flex-col items-center"
+      className="flex flex-col items-center hover:transition-transform hover:scale-105"
     >
       <div className="relative flex-col w-full aspect-square bg-gray-800 rounded-xl flex items-center justify-center p-0 shadow-lg border border-gray-700 hover:border-blue-400 transition-colors group">
         {/* Efeito de brilho */}

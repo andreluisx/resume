@@ -49,9 +49,7 @@ export default function AboutMe() {
             overlayContent={
               <div className="flex gap-2 mb-3 ml-3 font-bold flex-row px-5 py-2 rounded-xl bg-black/20 backdrop-blur-md shadow-white">
                 <LinkedIn />
-                <p className="tilted-card-demo-text">
-                  Foto do Linkedin
-                </p>
+                <p className="tilted-card-demo-text">Foto do Linkedin</p>
               </div>
             }
           />
@@ -71,18 +69,24 @@ export default function AboutMe() {
 
           <div className="text-lg md:text-xl space-y-4">
             <p>
-              Com mais de X anos de experiência no desenvolvimento web, combino
-              habilidades técnicas sólidas com uma paixão por criar soluções
-              digitais impactantes.
+              Olá! Me chamo André Luís e sou desenvolvedor Full-Stack com
+              experiência em JavaScript, TypeScript, React, Next.js, Node.js e
+              Django. Tenho trabalhado em projetos web e mobile que envolvem
+              APIs REST, autenticação JWT e integração com inteligência
+              artificial, sempre buscando escrever códigos limpos e de fácil
+              manutenção.
             </p>
             <p>
-              Especializado em React, Next.js e Node.js, meu foco está em
-              construir aplicações performáticas, escaláveis e com excelente
-              experiência do usuário.
+              Minha jornada na programação começou na faculdade, com linguagens
+              como C e Python. Desde então, venho me aprofundando no universo do
+              desenvolvimento, explorando diferentes tecnologias e participando
+              de soluções que realmente impactam o dia a dia das pessoas.
             </p>
             <p>
-              Acredito que o código limpo e a arquitetura bem planejada são a
-              base para projetos de sucesso a longo prazo.
+              Sou movido por desafios e aprendizado constante. Acredito que, com
+              dedicação, colaboração e boas práticas de desenvolvimento, é
+              possível construir produtos eficientes, escaláveis e com excelente
+              experiência para o usuário.
             </p>
           </div>
 
@@ -94,17 +98,19 @@ export default function AboutMe() {
             viewport={{ once: true }}
             transition={{ delay: 0.6 }}
           >
-            {stacks.map((tech, i) => (
-              <motion.span
-                key={tech.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 + i * 0.1 }}
-                className="px-4 py-2 bg-gray-800 rounded-full text-sm font-medium border border-gray-700 hover:border-blue-400 transition-colors"
-              >
-                {tech.name}
-              </motion.span>
-            )).slice(0, 3)}
+            {stacks
+              .map((tech, i) => (
+                <motion.span
+                  key={tech.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6 + i * 0.1 }}
+                  className="px-4 py-2 bg-gray-800 rounded-full text-sm font-medium border border-gray-700 hover:border-blue-400 transition-colors"
+                >
+                  {tech.name}
+                </motion.span>
+              ))
+              .slice(0, 3)}
           </motion.div>
         </motion.div>
       </div>
