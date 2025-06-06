@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 
-export default function DynamicHeading({ texts, speed, className, highlightClass }) {
+export default function DynamicHeading({ texts, className, highlightClass }) {
   return (
     <div className={className}>
       {texts.map((text, i) => (

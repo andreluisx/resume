@@ -1,5 +1,4 @@
 "use client";
-import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import type { SvgIconTypeMap } from "@mui/material";
 import type { OverridableComponent } from "@mui/material/OverridableComponent";
 

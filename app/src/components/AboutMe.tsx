@@ -15,7 +15,6 @@ export default function AboutMe() {
       <div className="relative z-10 px-6 ">
         <DynamicHeading
           texts={["Sobre Mim"]}
-          speed={0.05}
           className="text-5xl md:text-7xl font-bold text-center mb-16"
           highlightClass="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
         />
