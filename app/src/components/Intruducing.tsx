@@ -185,41 +185,6 @@ export default function HeroSection() {
   );
 }
 
-// Componente de Partículas
-function ParticleBackground() {
-  return (
-    <div className="absolute w-full h-screen inset-0 overflow-hidden pointer-events-none">
-      {[...Array(50)].map((_, i) => (
-        <motion.div
-          key={i}
-          initial={{
-            opacity: 0,
-            x: Math.random() * 100,
-            y: Math.random() * 100,
-            scale: Math.random() * 0.5 + 0.5
-          }}
-          animate={{
-            opacity: [0, Math.random() * 0.5 + 0.2, 0],
-            x: Math.random() * 100,
-            y: Math.random() * 100
-          }}
-          transition={{
-            duration: Math.random() * 20 + 10,
-            repeat: Infinity,
-            repeatType: "reverse",
-            delay: Math.random() * 5
-          }}
-          className="absolute rounded-full bg-white"
-          style={{
-            width: `${Math.random() * 3 + 1}px`,
-            height: `${Math.random() * 3 + 1}px`
-          }}
-        />
-      ))}
-    </div>
-  );
-}
-
 // Componente de Código Flutuante
 function FloatingCodeSnippets() {
   const snippets = [

@@ -1,9 +1,6 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
 import DynamicHeading from "./ui/DynamicHeading";
-import InteractiveCard from "./ui/InteractiveCard";
-import TechParticles from "./ui/TechParticles";
 import TiltedCard from "./ui/TiltedCard";
 import { LinkedIn } from "@mui/icons-material";
 import { stacks } from "@/app/data/data_portifolio";

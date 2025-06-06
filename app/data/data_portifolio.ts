@@ -131,18 +131,45 @@ export const projects: Project[] = [
       "Tratamento de Erros",
     ],
   },
+  {
+    title: "Guess the Game",
+    image: "/images/projects/inicio.png",
+    shortDescription: "Descubra o jogo por imagens e dicas.",
+    fullDescription: `Guess The Game, um jogo onde você precisa adivinhar o nome de um jogo apenas por imagens e dicas, com mecânicas de pontuação, vidas e muito mais! Estava querendo colocar algo simples e legal em produção, ao procurar por ideias me deparei com a API do igdb que tem um repertorio gigante de jogos. Foi ai que tive a ideia de fazer esse jogo, ele está bem simplificado você só precisa acertar o nome do jogo, nada de 2, :(alguma coisa), ll e etc, até eu que não conheço tantos jogos assim consegui brincar um pouco... Convido vocês a testarem.`,
+    githubUrl: "https://github.com/andreluisx/guess-the-game-2",
+    technologies: ["Next.js", "JavaScript", "Tailwind CSS"],
+    features: [
+      "Consumo de API externa",
+      "Leitura de dados da resposta",
+      "Loading implementado",
+      "Tratamento de Erros",
+      "Salvamento de dados no localStorage",
+      "Recursos pra evitar Spam na API",
+    ],
+    siteUrl: "https://guess-the-game-2-cuqh.vercel.app/",
+  },
 ];
 
 export const certificates: Certificate[] = [
   {
     title: "Curso de Nest.js",
-    image: "/images/projects/perfectjob.png",
+    image: "https://udemy-certificate.s3.amazonaws.com/image/UC-c87c52e0-fa40-40ae-b0b2-7f89c7c120b6.jpg",
     description:
       "Curso de NestJS - crie seu backend API RESTful com TypeOrm, PostgreSQL, autenticação JWT, testes automatizados e padrões",
     issuer: "Udemy",
     date: "Maio 2025",
     url:"https://www.udemy.com/course/nestjs-curso-completo-rest-api-typeorm-jwt-e-mais",
     teacher:"Luíz Ótavio",
+  },
+  {
+    title: "Curso de Node",
+    image: "/images/certificates/certificado.png",
+    description:
+      "Imersão Alura com foco em back-end com node, explicação de conceitos básicos com express.",
+    issuer: "Alura",
+    date: "Dezembro 2024",
+    url:"https://cursos.alura.com.br/user/andremice1/fullCertificate/51cce036db9988d2a48d37db88e76748",
+    teacher:"Guilherme Silveira",
   },
   
 ];

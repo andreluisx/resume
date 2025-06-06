@@ -8,8 +8,8 @@ import TrackAccessClient from "./src/components/tracker/TrackerAccess";
 export default function Home() {
   return (
     <div className="flex flex-col w-full h-full scroll-smooth">
-      {/* <TrackAccessClient /> */}
-      <section id={'intro'}>
+      <TrackAccessClient />
+      <section id={"intro"}>
         <Introducing />
       </section>
       <section id={navBarContent[0].idSection}>
@@ -21,7 +21,6 @@ export default function Home() {
       <section id={navBarContent[2].idSection}>
         <ContactMe />
       </section>
-
     </div>
   );
 }

@@ -30,7 +30,6 @@ const AccessStats = () => {
   const [stats, setStats] = useState<AccessData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [lastRefresh, setLastRefresh] = useState<string>("");
 
   const fetchStats = async () => {
     console.log("Fetching stats...");
@@ -134,11 +133,6 @@ const AccessStats = () => {
               />
               Atualizar
             </button>
-            {lastRefresh && (
-              <span className="ml-4 text-sm text-gray-400">
-                Última atualização: {lastRefresh}
-              </span>
-            )}
           </div>
         </motion.div>
 

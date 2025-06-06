@@ -114,7 +114,7 @@ const ContactSection = () => {
 
         <div className="mt-20 text-center border-t border-gray-700 pt-10">
           <p className="text-gray-400">
-            "O sucesso é a soma de pequenos esforços repetidos dia após dia." -
+            &ldquo;O sucesso é a soma de pequenos esforços repetidos dia após dia.&rdquo; -
             Robert Collier
           </p>
           <p className="mt-4 text-gray-300">

@@ -2,7 +2,19 @@ import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import db from "@/app/src/components/lib/db";
 
-// Configuração do e-mail
+interface LastAccess {
+  ip: string;
+  country: string;
+  city: string;
+  created_at: string;
+  timestamp?: string;
+}
+
+interface CountResult {
+  count: number;
+}
+
+// Configuração do e-mail com verificação de tipo mais segura
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -13,14 +25,12 @@ const transporter = nodemailer.createTransport({
 
 function getClientIP(req: NextRequest): string {
   const forwarded = req.headers.get("x-forwarded-for");
-  return forwarded ? forwarded.split(",")[0].trim() : req.ip || "unknown";
+  return forwarded ? forwarded.split(",")[0].trim() : req.headers.get("x-real-ip") || "unknown";
 }
 
-// Função para gerar timestamp do Brasil
 function getBrazilTimestamp(): string {
   const now = new Date();
 
-  // Usar o timezone oficial do Brasil
   const formatter = new Intl.DateTimeFormat("en-CA", {
     timeZone: "America/Sao_Paulo",
     year: "numeric",
@@ -34,13 +44,12 @@ function getBrazilTimestamp(): string {
 
   const parts = formatter.formatToParts(now);
 
-  // Montar no formato YYYY-MM-DD HH:mm:ss
-  const year = parts.find((p) => p.type === "year")?.value;
-  const month = parts.find((p) => p.type === "month")?.value;
-  const day = parts.find((p) => p.type === "day")?.value;
-  const hour = parts.find((p) => p.type === "hour")?.value;
-  const minute = parts.find((p) => p.type === "minute")?.value;
-  const second = parts.find((p) => p.type === "second")?.value;
+  const year = parts.find((p) => p.type === "year")?.value ?? "0000";
+  const month = parts.find((p) => p.type === "month")?.value ?? "00";
+  const day = parts.find((p) => p.type === "day")?.value ?? "00";
+  const hour = parts.find((p) => p.type === "hour")?.value ?? "00";
+  const minute = parts.find((p) => p.type === "minute")?.value ?? "00";
+  const second = parts.find((p) => p.type === "second")?.value ?? "00";
 
   return `${year}-${month}-${day} ${hour}:${minute}:${second}`;
 }
@@ -50,7 +59,6 @@ export async function POST(req: NextRequest) {
     const ip = getClientIP(req);
     const brazilTimestamp = getBrazilTimestamp();
 
-    // Headers ou corpo da requisição podem fornecer mais dados
     const headers = req.headers;
 
     const country = headers.get("x-vercel-ip-country") || "unknown";
@@ -65,14 +73,14 @@ export async function POST(req: NextRequest) {
 
     console.log("Inserindo com timestamp do Brasil:", brazilTimestamp);
 
-    // Inserir no banco com timestamp brasileiro
-    db.prepare(
-      `
+    // Inserir no banco com tipo explícito
+    const insertStmt = db.prepare(`
       INSERT INTO access_logs 
       (ip, country, city, device, url, referrer, screenResolution, language, timezone, created_at)
       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    `
-    ).run(
+    `);
+    
+    insertStmt.run(
       ip,
       country,
       city,
@@ -82,25 +90,24 @@ export async function POST(req: NextRequest) {
       screenResolution,
       language,
       timezone,
-      brazilTimestamp // Passa o timestamp brasileiro explicitamente
+      brazilTimestamp
     );
 
-    // Pegar total de acessos
-    const totalAccesses = db
+    // Pegar total de acessos com tipo explícito
+    const totalResult = db
       .prepare("SELECT COUNT(*) AS count FROM access_logs")
-      .get().count;
+      .get() as CountResult;
+    const totalAccesses = totalResult.count;
 
-    // Pegar últimos 5 acessos
+    // Pegar últimos 5 acessos com tipo explícito
     const lastAccesses = db
-      .prepare(
-        `
+      .prepare(`
         SELECT ip, country, city, created_at 
         FROM access_logs 
         ORDER BY id DESC 
         LIMIT 5
-      `
-      )
-      .all();
+      `)
+      .all() as LastAccess[];
 
     // Enviar e-mail se configurado
     if (
@@ -124,7 +131,7 @@ export async function POST(req: NextRequest) {
             ${lastAccesses
               .map(
                 (a) =>
-                  `<li>${a.created_at} - ${a.timestamp}, (IP: ${a.ip})</li>`
+                  `<li>${a.created_at} - ${a.timestamp || ''}, (IP: ${a.ip})</li>`
               )
               .join("")}
           </ul>
