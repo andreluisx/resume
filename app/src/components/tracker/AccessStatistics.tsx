@@ -32,19 +32,16 @@ const AccessStats = () => {
   const [error, setError] = useState<string | null>(null);
 
   const fetchStats = async () => {
-    console.log("Fetching stats...");
     try {
       setLoading(true);
-      const response = await fetch("/api/access-stats");
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/access-stats`);
 
-      console.log("Response status:", response.status);
 
       if (!response.ok) {
         throw new Error(`Erro ${response.status}`);
       }
 
       const data = await response.json();
-      console.log("Data received:", data);
 
       setStats(data.data);
     } catch (err) {

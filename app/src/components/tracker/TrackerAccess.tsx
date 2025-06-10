@@ -19,7 +19,7 @@ export default function TrackAccessClient() {
       try {
         const clientInfo = getClientInfo();
 
-        const response = await fetch("/api/track-access", {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/track-access`, {
           method: "POST",
           headers:{
             "Content-Type": "application/json",
@@ -38,8 +38,6 @@ export default function TrackAccessClient() {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        const data = await response.json();
-        console.log("Access tracked:", data);
       } catch (error) {
         console.error("Tracking error:", error);
       }

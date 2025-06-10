@@ -71,8 +71,6 @@ export async function POST(req: NextRequest) {
     const timezone =
       Intl.DateTimeFormat().resolvedOptions().timeZone || "unknown";
 
-    console.log("Inserindo com timestamp do Brasil:", brazilTimestamp);
-
     // Inserir no banco com tipo explícito
     const insertStmt = db.prepare(`
       INSERT INTO access_logs 
