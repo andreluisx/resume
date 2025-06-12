@@ -28,6 +28,7 @@ export const CertificateModal = ({
           src={certificate.image}
           alt={certificate.title}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
@@ -59,7 +60,7 @@ export const CertificateModal = ({
           <span>•</span>
           <span>Concluído em: {certificate.date}</span>
           <span>•</span>
-          <span>Professor: {certificate?.teacher || 'Não específicado'}</span>
+          <span>Professor: {certificate?.teacher || "Não específicado"}</span>
         </div>
 
         <p className="mt-4 text-gray-300">{certificate.description}</p>
@@ -67,14 +68,14 @@ export const CertificateModal = ({
         <div className="flex justify-start items-center gap-5 mt-8">
           <button
             onClick={onClose}
-            className="inline-flex items-center px-6 py-3 bg-gradient-to-r bg-black rounded-lg font-medium hover:opacity-90 transition-opacity"
+            className="cursor-pointer inline-flex items-center px-6 py-3 bg-gradient-to-r bg-black rounded-lg font-medium hover:opacity-90 transition-opacity"
           >
             Fechar
           </button>
           <a
             target="_blank"
             href={certificate?.url}
-            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg font-medium hover:opacity-90 transition-opacity"
+            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-700 rounded-lg font-medium hover:opacity-90 transition-opacity"
           >
             Ver Curso
           </a>

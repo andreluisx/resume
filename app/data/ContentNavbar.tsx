@@ -4,6 +4,11 @@ import {
 } from "@mui/icons-material";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import EmailIcon from '@mui/icons-material/Email';
+import LaptopChromebookIcon from '@mui/icons-material/LaptopChromebook';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
+import InventoryIcon from '@mui/icons-material/Inventory';
+import TerminalIcon from '@mui/icons-material/Terminal';
+
 
 export interface NavLinksType {
   id: string;
@@ -19,20 +24,20 @@ export const navBarContent: NavLinksType[] = [
     title: "Sobre Mim",
     idSection: "sobre",
     section: "#sobre",
-    icon: <AccountCircleIcon />,
+    icon: <MenuBookIcon className="md:pb-1 pb-0"/>,
   },
   {
     id: "portifolio",
     title: "Portifólio",
     idSection: "portifolio",
     section: "#portifolio",
-    icon: <Psychology />,
+    icon: <TerminalIcon className="md:pb-1 pb-0"/>,
   },
   {
     id: "contato",
     title: "Contato",
     idSection: "contato",
     section: "#contato",
-    icon: <EmailIcon />,
+    icon: <EmailIcon className="md:pb-1 pb-0"/>,
   },
 ];

@@ -19,16 +19,15 @@ const Portfolio = () => {
       {/* Efeitos de Fundo */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600 rounded-full filter blur-[150px] opacity-10"></div>
-        <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-purple-600 rounded-full filter blur-[150px] opacity-10"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-blue-600 rounded-full filter blur-[150px] opacity-10"></div>
       </div>
 
       {/* Cabeçalho Dinâmico */}
       <div className="relative z-10 pt-7">
-        <DynamicHeading 
-          texts={["Portifólio"]} 
-          speed={0.05}
-          highlightClass="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
-          className="text-4xl md:text-6xl font-bold text-center mb-4"
+      <DynamicHeading
+          texts={["Portifólio"]}
+          className="text-5xl md:text-7xl font-bold text-center mb-16"
+          highlightClass="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-300"
         />
         <p className="text-center text-gray-400 max-w-2xl mx-auto px-4">
           Explore meu conjunto de habilidades, trabalhos realizados e conquistas acadêmicas
@@ -36,7 +35,7 @@ const Portfolio = () => {
       </div>
 
       {/* Abas */}
-      <div className="flex justify-center my-16 relative z-10">
+      <div className="flex justify-center my-16 relative z-10 ">
         <div className="flex space-x-1 rounded-full bg-gray-800 p-1 border border-gray-700 shadow-lg">
           {(['stacks', 'projects', 'certificates'] as const).map((tab) => (
             <motion.button
@@ -44,9 +43,9 @@ const Portfolio = () => {
               onClick={() => setActiveTab(tab)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
+              className={`px-6 py-3 cursor-pointer rounded-full text-sm font-medium transition-all duration-300 ${
                 activeTab === tab
-                  ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-md'
+                  ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-md '
                   : 'text-gray-300 hover:text-white'
               }`}
             >
@@ -85,7 +84,7 @@ const Portfolio = () => {
 
             {/* Seção de Projetos */}
             {activeTab === 'projects' && (
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {projects.map((project, index) => (
                   <ProjectCard
                     key={project.title}

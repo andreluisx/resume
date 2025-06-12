@@ -17,7 +17,7 @@ export default function DesktopNavbar() {
         André Luís
       </a>
       <nav>
-        <ul className="flex flex-row gap-3 items-center h-full">
+        <ul className="flex flex-row gap-5 items-center h-full">
           {navBarContent.map((content: NavLinksType) => {
             const isActive = activeSection === content.idSection;
             return (
@@ -25,7 +25,7 @@ export default function DesktopNavbar() {
                 <a
                   href={content.section}
                   style={{ fontFamily: "Roboto" }}
-                  className={`flex flex-row items-center gap-2 justify-center p-3 text-md transition-colors duration-300 ${
+                  className={`flex flex-row items-center gap-1 justify-center h-fit text-md transition-colors duration-300 ${
                     isActive
                       ? "text-yellow-400"
                       : "text-slate-100 hover:text-slate-300"

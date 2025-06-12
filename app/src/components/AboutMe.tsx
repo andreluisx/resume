@@ -10,13 +10,13 @@ export default function AboutMe() {
   const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
   return (
-    <section className="relative min-h-screen py-20 overflow-hidden bg-gray-900 ">
+    <section className="relative min-h-screen py-20 overflow-hidden bg-gray-900">
       {/* Cabeçalho com Efeito */}
       <div className="relative z-10 px-6 ">
         <DynamicHeading
           texts={["Sobre Mim"]}
           className="text-5xl md:text-7xl font-bold text-center mb-16"
-          highlightClass="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
+          highlightClass="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-300"
         />
       </div>
 
@@ -31,7 +31,7 @@ export default function AboutMe() {
           className="flex-shrink-0"
         >
           <TiltedCard
-            imageSrc="/images/foto_minha.jpeg"
+            imageSrc="/images/afoto_minha.jpg"
             altText="André Luís Foto"
             containerHeight="300px"
             containerWidth="300px"
@@ -45,7 +45,7 @@ export default function AboutMe() {
             overlayContent={
               <div className="flex gap-2 mb-3 ml-3 font-bold flex-row px-5 py-2 rounded-xl bg-black/20 backdrop-blur-md shadow-white">
                 <LinkedIn />
-                <p className="tilted-card-demo-text">Foto do Linkedin</p>
+                <p className="tilted-card-demo-text">andreluiss-dev</p>
               </div>
             }
           />
@@ -60,29 +60,28 @@ export default function AboutMe() {
           className="max-w-2xl"
         >
           <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-blue-400">
-            Desenvolvedor Full-Stack & Entusiasta de Tecnologia
+            Desenvolvedor Full-Stack
           </h3>
 
           <div className="text-lg md:text-xl space-y-4">
             <p>
-              Olá! Me chamo André Luís e sou desenvolvedor Full-Stack com
-              experiência em JavaScript, TypeScript, React, Next.js, Node.js e
-              Django. Tenho trabalhado em projetos web e mobile que envolvem
-              APIs REST, autenticação JWT e integração com inteligência
-              artificial, sempre buscando escrever códigos limpos e de fácil
-              manutenção.
+              Olá! Me chamo André Luís tenho 22 anos, moro no interior da Bahia,
+              atualmente estou cursando bacharelado em ciência da computação com
+              pretenção de acabar em 2028.
             </p>
             <p>
-              Minha jornada na programação começou na faculdade, com linguagens
-              como C e Python. Desde então, venho me aprofundando no universo do
-              desenvolvimento, explorando diferentes tecnologias e participando
-              de soluções que realmente impactam o dia a dia das pessoas.
+              Sou desenvolvedor Full-Stack com 2 anos na área, e experiências em
+              JavaScript, TypeScript, React, Next.js, Nest.js e Django. Tenho
+              trabalhado em projetos web e mobile que envolvem APIs REST,
+              autenticação segura, integração com inteligência artificial, entre
+              outras coisas.
             </p>
             <p>
-              Sou movido por desafios e aprendizado constante. Acredito que, com
-              dedicação, colaboração e boas práticas de desenvolvimento, é
-              possível construir produtos eficientes, escaláveis e com excelente
-              experiência para o usuário.
+              Minha jornada na programação começou na Universidade Federal do
+              Recôncavo da Bahia, com linguagens como C e Python. Desde então,
+              venho me aprofundando no universo do desenvolvimento, explorando
+              diferentes tecnologias e participando de soluções que realmente
+              impactam o dia a dia das pessoas.
             </p>
           </div>
 

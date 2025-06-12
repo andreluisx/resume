@@ -48,6 +48,7 @@ export default function InteractiveCard({
           alt={altText}
           width={width}
           height={height}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover w-full h-full"
         />
       </motion.div>

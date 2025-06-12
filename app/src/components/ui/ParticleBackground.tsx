@@ -33,7 +33,14 @@ export default function Introducing() {
     visible: { opacity: 1 },
   };
 
-  const technologies = ["JavaScript", "TypeScript", "Python", "React", "Next.js", "Node.js"];
+  const technologies = [
+    "JavaScript",
+    "TypeScript",
+    "Python",
+    "React",
+    "Next.js",
+    "Node.js",
+  ];
 
   return (
     <div className="relative bg-black w-full min-h-screen flex flex-col-reverse md:flex-row justify-between items-center overflow-hidden">
@@ -45,7 +52,7 @@ export default function Introducing() {
           amplitude={0.8}
           speed={0.4}
         />
-        <ParticleBackground 
+        <ParticleBackground
           particleCount={30}
           colors={["#3A29FF", "#FF94B4", "#FF3232", "#FFFFFF"]}
         />
@@ -54,7 +61,7 @@ export default function Introducing() {
       {/* Content */}
       <div className="relative z-30 w-full max-w-7xl mx-auto px-6 py-16 md:py-0 flex flex-col-reverse md:flex-row items-center justify-between gap-12">
         {/* Left Column - Text Content */}
-        <motion.div 
+        <motion.div
           className="flex-1 flex flex-col gap-8"
           initial="hidden"
           animate="visible"
@@ -62,7 +69,7 @@ export default function Introducing() {
         >
           {/* Title Section */}
           <motion.div variants={variants} className="space-y-4">
-            <motion.h1 
+            <motion.h1
               className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white text-center md:text-left"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -84,7 +91,7 @@ export default function Introducing() {
               </div>
             </motion.h1>
 
-            <motion.div 
+            <motion.div
               className="md:text-xl text-lg text-gray-300 max-w-xl text-center md:text-left"
               variants={fadeIn}
               transition={{ delay: 0.4, duration: 1 }}
@@ -103,7 +110,7 @@ export default function Introducing() {
           </motion.div>
 
           {/* Technologies */}
-          <motion.div 
+          <motion.div
             variants={variants}
             transition={{ delay: 0.6 }}
             className="flex flex-wrap gap-3 justify-center md:justify-start"
@@ -125,27 +132,27 @@ export default function Introducing() {
           </motion.div>
 
           {/* Action Buttons */}
-          <motion.div 
+          <motion.div
             variants={variants}
             transition={{ delay: 0.8 }}
             className="flex flex-wrap gap-4 justify-center md:justify-start"
           >
-            <MiniStack 
-              title="Projetos" 
-              icon={OpenInNewIcon} 
+            <MiniStack
+              title="Projetos"
+              icon={OpenInNewIcon}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.9 }}
             />
-            <MiniStack 
-              title="Contato" 
+            <MiniStack
+              title="Contato"
               icon={ChatIcon}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1 }}
             />
-            <MiniStack 
-              title="Códigos" 
+            <MiniStack
+              title="Códigos"
               icon={CodeIcon}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -159,22 +166,23 @@ export default function Introducing() {
           className="flex-1 flex justify-center"
           initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ 
+          transition={{
             duration: 1,
             ease: [0.16, 0.77, 0.47, 0.97],
-            delay: 0.3
+            delay: 0.3,
           }}
         >
           <div className="relative w-full max-w-md lg:max-w-lg">
             <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-3xl -z-10 scale-90 animate-pulse" />
             <div className="absolute inset-0 rounded-full bg-red-500/20 blur-3xl -z-10 scale-95 animate-pulse delay-300" />
-            <Image 
-              src="/images/js.png" 
-              alt="JavaScript Developer" 
-              width={600} 
+            <Image
+              src="/images/js.png"
+              alt="JavaScript Developer"
+              width={600}
               height={600}
               className="w-full h-auto object-contain"
               priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </div>
         </motion.div>
