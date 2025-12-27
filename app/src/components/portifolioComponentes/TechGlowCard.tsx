@@ -1,4 +1,5 @@
 // Componente de Card de Tecnologia
+import { LevelFocus } from "@/app/data/data_portifolio";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -6,11 +7,13 @@ export const TechGlowCard = ({
   name,
   image,
   proficiency,
+  focus,
   index,
 }: {
   name: string;
   image: string;
   proficiency: number;
+  focus: LevelFocus;
   index: number;
 }) => {
   const proficiencyColors = [
@@ -20,6 +23,19 @@ export const TechGlowCard = ({
     "bg-blue-400",
     "bg-green-500",
   ];
+
+  function getFocusColor(focus: LevelFocus) {
+    switch (focus) {
+      case LevelFocus.ATUAL:
+        return "text-green-400";
+      case LevelFocus.USOASVEZES:
+        return "text-yellow-400";
+      case LevelFocus.JAUSEI:
+        return "text-gray-400";
+      default:
+        return "text-gray-400";
+    }
+  }
 
   return (
     <motion.div
@@ -59,6 +75,7 @@ export const TechGlowCard = ({
           {name}
         </span>
       </div>
+      {focus && <p className={`${getFocusColor(focus)} font-bold`}>status: {focus}</p>}
     </motion.div>
   );
 };

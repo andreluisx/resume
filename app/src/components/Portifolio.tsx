@@ -75,6 +75,7 @@ const Portfolio = () => {
                     key={stack.name}
                     name={stack.name}
                     image={stack.image}
+                    focus={stack.focus}
                     proficiency={stack.proficiency}
                     index={index}
                   />

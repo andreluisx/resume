@@ -1,7 +1,14 @@
+export enum LevelFocus {
+  ATUAL = "Foco atual",
+  USOASVEZES = "Uso as vezes ainda",
+  JAUSEI = "Já usei",
+}
+
 export type Stack = {
   name: string;
   image: string;
-  proficiency: number; // 1-5
+  proficiency: number;
+  focus: LevelFocus;
 };
 
 export type Project = {
@@ -26,33 +33,54 @@ export type Certificate = {
 };
 
 export const stacks: Stack[] = [
-  { name: "Python", image: "/images/stacks/python.png", proficiency: 5 },
   {
-    name: "JavaScript",
-    image: "/images/stacks/javascript.png",
-    proficiency: 5,
+    name: "Java",
+    image: "/images/stacks/java.png",
+    proficiency: 4,
+    focus: LevelFocus.ATUAL
   },
   {
     name: "TypeScript",
     image: "/images/stacks/typescript.png",
     proficiency: 4,
+    focus: LevelFocus.ATUAL
   },
-  { name: "React", image: "/images/stacks/react.png", proficiency: 5 },
-  { name: "React Native", image: "/images/stacks/react.png", proficiency: 5 },
-  { name: "Next.js", image: "/images/stacks/nextjs.png", proficiency: 4 },
-  { name: "Nest.js", image: "/images/stacks/nestjs.png", proficiency: 4 },
-  { name: "Django", image: "/images/stacks/django.png", proficiency: 5 },
-  { name: "Node.js", image: "/images/stacks/nodejs.png", proficiency: 4 },
-  { name: "Tailwind", image: "/images/stacks/tailwind.png", proficiency: 5 },
+  {
+    name: "SpringBoot",
+    image: "/images/stacks/spring.png",
+    proficiency: 4,
+    focus: LevelFocus.ATUAL
+  },
+  {
+    name: "Angular",
+    image: "/images/stacks/angular.png",
+    proficiency: 3,
+    focus: LevelFocus.ATUAL
+  },
+  { name: "PostgreSql", image: "/images/stacks/postgre.png", proficiency: 4, focus: LevelFocus.ATUAL },
+  { name: "Docker", image: "/images/stacks/docker.png", proficiency: 3, focus: LevelFocus.ATUAL },
+  { name: "Next.js", image: "/images/stacks/nextjs.png", proficiency: 4, focus: LevelFocus.USOASVEZES },
+  { name: "Nest.js", image: "/images/stacks/nestjs.png", proficiency: 4, focus: LevelFocus.USOASVEZES },
+  { name: "React", image: "/images/stacks/react.png", proficiency: 5, focus: LevelFocus.USOASVEZES },
+  {
+    name: "JavaScript",
+    image: "/images/stacks/javascript.png",
+    proficiency: 5,
+    focus: LevelFocus.JAUSEI
+  },
+  { name: "React Native", image: "/images/stacks/react.png", proficiency: 5, focus: LevelFocus.JAUSEI },
+  { name: "Python", image: "/images/stacks/python.png", proficiency: 5, focus: LevelFocus.JAUSEI },
+  { name: "Django", image: "/images/stacks/django.png", proficiency: 5, focus: LevelFocus.JAUSEI },
+  { name: "Node.js", image: "/images/stacks/nodejs.png", proficiency: 4, focus: LevelFocus.JAUSEI },
+  { name: "Tailwind", image: "/images/stacks/tailwind.png", proficiency: 5, focus: LevelFocus.JAUSEI },
   {
     name: "Django Rest Framework",
     image: "/images/stacks/rest.png",
     proficiency: 3,
+    focus: LevelFocus.JAUSEI
   },
-  { name: "MongoDB", image: "/images/stacks/mongodb.png", proficiency: 3 },
-  { name: "PostgreSql", image: "/images/stacks/postgre.png", proficiency: 4 },
-  { name: "MySql", image: "/images/stacks/mysql.png", proficiency: 4 },
-  { name: "Docker", image: "/images/stacks/docker.png", proficiency: 3 },
+  { name: "MongoDB", image: "/images/stacks/mongodb.png", proficiency: 3, focus: LevelFocus.JAUSEI },
+  { name: "MySql", image: "/images/stacks/mysql.png", proficiency: 4, focus: LevelFocus.JAUSEI },
 ];
 
 export const projects: Project[] = [

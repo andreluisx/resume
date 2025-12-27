@@ -65,20 +65,21 @@ export default function AboutMe() {
 
           <div className="text-lg md:text-xl space-y-4">
             <p>
-              Olá! Me chamo André Luís tenho 22 anos, moro no interior da Bahia,
+              Olá! Me chamo André Luís tenho 23 anos, moro no interior da Bahia,
               atualmente estou cursando bacharelado em ciência da computação com
               pretenção de acabar em 2028.
             </p>
             <p>
-              Sou desenvolvedor Full-Stack com 2 anos na área, e experiências em
-              JavaScript, TypeScript, React, Next.js, Nest.js e Django. Tenho
+              Sou desenvolvedor Full-Stack com 3 anos na área, e experiências em
+              JavaScript, TypeScript, React, Next.js, Nest.js e Django. Mas meu foco
+              ultimamente está sendo Java com SpringBoot e Angular. Tenho
               trabalhado em projetos web e mobile que envolvem APIs REST,
-              autenticação segura, integração com inteligência artificial, entre
-              outras coisas.
+              autenticação segura, integração com inteligência artificial, arquitetura
+              limpa e escalável, entre outras coisas.
             </p>
             <p>
               Minha jornada na programação começou na Universidade Federal do
-              Recôncavo da Bahia, com linguagens como C e Python. Desde então,
+              Recôncavo da Bahia, com linguagens como C, Python e Javascript. Desde então,
               venho me aprofundando no universo do desenvolvimento, explorando
               diferentes tecnologias e participando de soluções que realmente
               impactam o dia a dia das pessoas.
